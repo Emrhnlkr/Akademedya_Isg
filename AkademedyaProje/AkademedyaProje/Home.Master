@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="AkademedyaProje.Home" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bodyHome {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        @media (max-width: 980px) {
+            .navbar-text.pull-right {
+                padding-left: 5px;
+                padding-right: 4px;
+            }
+        }
+
+        .sidebarNavHome {
+            padding: 9px 0;
+            margin-top: 8%;
+        }
+
+        .logoutStyle {
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+
+        .welcomeStyle {
+            margin-Top: 5px;
+            margin-right: 15px;
+        }
+    </style>
+    <title>Akademedya Proje</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bodyHome">
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-controls="nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="#">Akademedya Project</a>
+                    <div class="nav-collapse collapse">
+                        <p class="navbar-text pull-right logoutStyle">
+                            <asp:Button ID="Button1" runat="server" Text="Çıkış Yap" CssClass="btn btn-primary" OnClick="Button1_Click" />
+                        </p>
+                        <p class="navbar-text pull-right welcomeStyle">
+                            HOŞGELDİN
+                           <asp:Label ID="Label1" runat="server"></asp:Label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well sidebarNavHome">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Tablo İşlemleri</li>
+                            <li><a href="tableCreatePage.aspx">Yeni Tablo Oluştur</a></li>
+                            <li><a href="tableAddListPage.aspx">Tablolara Veri Ekle ve Listele</a></li>
+                            <li class="nav-header">Veritabanı İşlemleri</li>
+                            <li><a href="tableChangeColumnPage.aspx">Tablo Alan Değişimi</a></li>
+                            <li><a href="tableChangeTypePage.aspx">Tablo Alan Tip Değişimi</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="span9">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
